@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+.slide img{
+    width: 100%;
+    height: 500px;
+}
+.card{
+    border-radius: 0px !important;
+
+}
+.card img {
+    width: 100%;
+}
+.banner{
+    width: 100%;
+    height: auto;
+}
+.banner-img img{
+    float: right;
+}
+.navbar{
+    background-color: #E233F1;
+}
+.cart-view{
+    padding-top: 19px;
+    line-height: 5px;
+}
+.cart-img img{
+    padding: 18px;
+}
+.form-search{
+    width: 80% !important;
+    padding-top: 10px;
+    margin: 20px 23px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.nav a{
+    color: black;
+}
+
+.nav-link{
+    color: #FFF937;
+}
+.nav-tab{
+    width: 25%;
+    height: auto;
+    margin: 0 auto;
+}
