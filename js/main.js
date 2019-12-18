@@ -1,15 +1,14 @@
 var app = angular.module('myApp', ["ngRoute"]);
 app.config(function($routeProvider){
-    $routeProvider.when("/1",{
+    $routeProvider.when("/home",{
         templateUrl : "template/main.html"
+        
     }).when("/quiz",{
         templateUrl : "template/quiz.html"
     }).otherwise({
-        redirectTo : "main.html"
+        redirectTo : "/home"
     });
-    // .otherwise({
-    //     templateUrl : "index.html"
-    // });
+  
 });
 app.controller('myCtrllist',function($scope,$http){
     $http.get('js/data.json').then(function(res){
