@@ -1,14 +1,28 @@
 <div ng-include="'template/header.html'"></div>
-
-<div class="box-quiz" ng-repeat="quiz in quizs | limitTo : 10">
+<form name="f1">
+<div class="box-quiz" ng-repeat="quiz in quizs track by $index | limitTo : 10">
            <h4>{{quiz.Text}}</h4>
            
            <div class="form-check" ng-repeat='x in quiz.Answers'>
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="answer" id="answer" ng-model="answer" value={{x.Id}} ng-click="checkQuiz();">{{ x.Text }}
+                  <input type="radio" class="form-check-input" name="{{quiz.Id}}" id="{{x.Id}}" 
+                  ng-model="model[$parent.$index]"
+                   ng-value="x.Id" ng-change="checkQuiz($parent.$index, quiz.AnswerId, quiz.Marks);">{{ x.Text }}
                   {{x.Id}}
-                  {{ answer }}
-                  {{quiz.AnswerId}}
+                  
+                  <!-- {{quiz.AnswerId}} -->
                 </label>
               </div>
+              {{ "ket qua" + answer }}
                 </div>
+                <div class="quizNav">
+                  <div>
+                      <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(1);">First</button>
+                      <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(currentPage - 1);">Prev</button>
+                      <button class="btn btn-primary"                            ng-click="goTo(currentPage + 1);">Next</button>
+                      <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(totalItems);">Last</button>
+                  </div>
+                  <br />
+                  <pagination ng-show="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+              </div>
+            </form>
